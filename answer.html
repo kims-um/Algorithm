@@ -6,14 +6,28 @@
   <body>
     <script>
       function solution(a, b, c) {
-        let answer;
-        if (a < b) answer = a;
-        else answer = b;
-        if (c < answer) answer = c;
+        let answer = "yes",
+          long;
+        let tot = a + b + c;
+        /* 3변의 합을 담을 변수 tot
+        가장 긴 변의 길이를 담을 ㅣong 변수 선언 
+        answer를 yes 값을 담아서 if 문 false시, Yes출력*/
+        if (a > b) {
+          long = a;
+        } else {
+          long = b;
+        }
+        if (c > long) {
+          long = c;
+        }
+        if (tot - long < long) {
+          answer = "no";
+        }
+        // 세변의 합 - 가장긴 변 < 가장 긴 변 보다 작을 시, "no" 출력
         return answer;
       }
 
-      console.log(solution(2, 5, 1));
+      console.log(solution(13, 33, 17));
     </script>
   </body>
 </html>
